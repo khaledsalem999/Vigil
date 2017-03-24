@@ -3,7 +3,6 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_QtVigil.h"
 #include <iostream>
-#include <opencv2>
 
 class QtVigil : public QMainWindow
 {
