@@ -15,5 +15,5 @@ void DBHandler::Insert()
 }
 std::string DBHandler::Retrive()
 {
-
+	return "no";
 }

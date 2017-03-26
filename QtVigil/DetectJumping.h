@@ -3,13 +3,13 @@
 #include <QObject>
 #include <DetectionAlgo.h>
 
-class DetectFaces : public QObject,public Detection
+class DetectJumping : public QObject,public Detection
 {
 	Q_OBJECT
 	Q_INTERFACES(Detection)
 
 public:
-	DetectFaces(QObject *parent);
-	~DetectFaces();
+	DetectJumping(QObject *parent);
+	~DetectJumping();
 	int Detect();
 };

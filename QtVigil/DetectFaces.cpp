@@ -9,7 +9,7 @@ DetectFaces::~DetectFaces()
 {
 }
 
-int Detection::Detect()
+int DetectFaces::Detect()
 {
 	return 0;
 }
