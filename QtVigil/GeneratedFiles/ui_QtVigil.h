@@ -34,7 +34,7 @@ public:
     QLabel *label_3;
     QPushButton *AddCam;
     QLabel *label_2;
-    QPushButton *pushButton_2;
+    QPushButton *OpenFace;
     QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -74,10 +74,10 @@ public:
 
         gridLayout->addWidget(label_2, 0, 5, 1, 1);
 
-        pushButton_2 = new QPushButton(centralWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        OpenFace = new QPushButton(centralWidget);
+        OpenFace->setObjectName(QStringLiteral("OpenFace"));
 
-        gridLayout->addWidget(pushButton_2, 0, 1, 1, 1);
+        gridLayout->addWidget(OpenFace, 0, 1, 1, 1);
 
         pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
@@ -108,7 +108,7 @@ public:
         label_3->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
         AddCam->setText(QApplication::translate("QtVigilClass", "Add Camera", Q_NULLPTR));
         label_2->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
-        pushButton_2->setText(QApplication::translate("QtVigilClass", "PushButton", Q_NULLPTR));
+        OpenFace->setText(QApplication::translate("QtVigilClass", "View Face anom", Q_NULLPTR));
         pushButton->setText(QApplication::translate("QtVigilClass", "PushButton", Q_NULLPTR));
     } // retranslateUi
 

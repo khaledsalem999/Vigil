@@ -6,12 +6,13 @@ QtVigil::QtVigil(QWidget *parent)
 	ui.setupUi(this);
 }
 
-void QtVigil::OpenFeed()
+std::string QtVigil::GetFaces()
 {
+	return "No";
+}
 
-}
-void QtVigil::on_AddCam_clicked()
+std::string QtVigil::GetAnomalies()
 {
-    Feed = new FeedScreen();
-    Feed->show();
+	return "No";
 }
+
