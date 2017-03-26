@@ -55,6 +55,15 @@
     <ClCompile Include="GeneratedFiles\qrc_QtVigil.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_FeedScreen.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_FeedScreen.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="FeedScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="QtVigil.h">
@@ -65,6 +74,9 @@
     </CustomBuild>
     <CustomBuild Include="QtVigil.qrc">
       <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="FeedScreen.h">
+      <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="FeedScreen.ui">
       <Filter>Form Files</Filter>
