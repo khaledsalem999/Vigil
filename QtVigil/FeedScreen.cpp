@@ -9,3 +9,23 @@ FeedScreen::FeedScreen(QWidget *parent)
 FeedScreen::~FeedScreen()
 {
 }
+
+std::string FeedScreen::GetCamera()
+{
+
+}
+
+void FeedScreen::SetParameters()
+{
+
+}
+
+void FeedScreen::ResetParameters()
+{
+
+}
+
+void FeedScreen::update()
+{
+
+}

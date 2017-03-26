@@ -10,7 +10,7 @@ class QtVigil : public QMainWindow
 public:
 	QtVigil(QWidget *parent = Q_NULLPTR);
 
-private slots:
+public slots:
 	std::string GetFaces();
 	std::string GetAnomalies();
 

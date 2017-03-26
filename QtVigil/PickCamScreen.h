@@ -11,7 +11,7 @@ public:
 	PickCamScreen(QWidget *parent = Q_NULLPTR);
 	~PickCamScreen();
 
-private slots:
+public slots:
 	void AddCamera();
 
 private:

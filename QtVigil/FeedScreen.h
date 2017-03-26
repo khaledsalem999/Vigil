@@ -11,6 +11,12 @@ public:
 	FeedScreen(QWidget *parent = Q_NULLPTR);
 	~FeedScreen();
 
+public slots:
+	std::string GetCamera();
+	void SetParameters();
+	void ResetParameters();
+	void update();
+
 private:
 	Ui::FeedScreen ui;
 };

@@ -12,7 +12,7 @@ public:
 	LogInScreen(QWidget *parent = Q_NULLPTR);
 	~LogInScreen();
 
-private slots:
+public slots:
 	QString LogIN();
 
 private:
