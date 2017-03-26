@@ -30,12 +30,12 @@ class Ui_QtVigilClass
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QLabel *label;
     QLabel *label_3;
     QPushButton *AddCam;
-    QLabel *label_2;
+    QLabel *label;
     QPushButton *OpenFace;
     QPushButton *pushButton;
+    QLabel *label_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -51,38 +51,38 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QStringLiteral("label"));
-        label->setAlignment(Qt::AlignCenter);
-
-        gridLayout->addWidget(label, 0, 4, 1, 1);
-
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(label_3, 0, 6, 1, 1);
+        gridLayout->addWidget(label_3, 0, 7, 1, 1);
 
         AddCam = new QPushButton(centralWidget);
         AddCam->setObjectName(QStringLiteral("AddCam"));
 
-        gridLayout->addWidget(AddCam, 0, 0, 1, 1);
+        gridLayout->addWidget(AddCam, 0, 2, 1, 1);
+
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(label, 0, 5, 1, 1);
+
+        OpenFace = new QPushButton(centralWidget);
+        OpenFace->setObjectName(QStringLiteral("OpenFace"));
+
+        gridLayout->addWidget(OpenFace, 0, 3, 1, 1);
+
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 4, 1, 1);
 
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(label_2, 0, 5, 1, 1);
-
-        OpenFace = new QPushButton(centralWidget);
-        OpenFace->setObjectName(QStringLiteral("OpenFace"));
-
-        gridLayout->addWidget(OpenFace, 0, 1, 1, 1);
-
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        gridLayout->addWidget(pushButton, 0, 2, 1, 1);
+        gridLayout->addWidget(label_2, 0, 6, 1, 1);
 
         QtVigilClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QtVigilClass);
@@ -104,12 +104,12 @@ public:
     void retranslateUi(QMainWindow *QtVigilClass)
     {
         QtVigilClass->setWindowTitle(QApplication::translate("QtVigilClass", "QtVigil", Q_NULLPTR));
-        label->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
         label_3->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
         AddCam->setText(QApplication::translate("QtVigilClass", "Add Camera", Q_NULLPTR));
-        label_2->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
+        label->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
         OpenFace->setText(QApplication::translate("QtVigilClass", "View Face anom", Q_NULLPTR));
         pushButton->setText(QApplication::translate("QtVigilClass", "PushButton", Q_NULLPTR));
+        label_2->setText(QApplication::translate("QtVigilClass", "TextLabel", Q_NULLPTR));
     } // retranslateUi
 
 };

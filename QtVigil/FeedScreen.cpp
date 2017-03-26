@@ -12,7 +12,7 @@ FeedScreen::~FeedScreen()
 
 std::string FeedScreen::GetCamera()
 {
-
+	return "nope";
 }
 
 void FeedScreen::SetParameters()

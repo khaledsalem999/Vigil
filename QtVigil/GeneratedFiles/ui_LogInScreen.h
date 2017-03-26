@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'LogInScreenmU1592.ui'
+** Form generated from reading UI file 'LogInScreen.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef LOGINSCREENMU1592_H
-#define LOGINSCREENMU1592_H
+#ifndef UI_LOGINSCREEN_H
+#define UI_LOGINSCREEN_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -96,4 +96,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // LOGINSCREENMU1592_H
+#endif // UI_LOGINSCREEN_H
