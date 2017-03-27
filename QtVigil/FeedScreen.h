@@ -10,8 +10,6 @@ class FeedScreen : public QWidget
 public:
 	FeedScreen(QWidget *parent = Q_NULLPTR);
 	~FeedScreen();
-
-public slots:
 	std::string GetCamera();
 	void SetParameters();
 	void ResetParameters();

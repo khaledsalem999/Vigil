@@ -1,8 +1,17 @@
 #include "ROI.h"
 
-ROI::ROI(QObject *parent)
+ROI::ROI(QObject *parent,int x,int y,int width,int height)
 	: QObject(parent)
 {
+	X = x;
+	Y = y;
+	Width = width;
+	Height = height;
+}
+
+ROI::ROI()
+{
+	
 }
 
 ROI::~ROI()
@@ -11,21 +20,33 @@ ROI::~ROI()
 
 int ROI::GetX()
 {
-	return 0;
+	return X;
 }
 int ROI::GetY()
 {
-	return 0;
+	return X;
 }
 int ROI::GetWidth()
 {
-	return 0;
+	return Width;
 }
 int ROI::GetHeight()
 {
-	return 0;
+	return Width;
 }
-int ROI::Set()
+void ROI::SetX(int x)
 {
-	return 0;
+	X = x;
+}
+void ROI::SetY(int y)
+{
+	Y = y;
+}
+void ROI::SetWidth(int width)
+{
+	Width = width;
+}
+void ROI::SetHeight(int height)
+{
+	Height = height;
 }

@@ -12,12 +12,12 @@ FeedScreen::~FeedScreen()
 
 std::string FeedScreen::GetCamera()
 {
-	return "nope";
+	return "C://vc.avi";
 }
 
 void FeedScreen::SetParameters()
 {
-
+	
 }
 
 void FeedScreen::ResetParameters()

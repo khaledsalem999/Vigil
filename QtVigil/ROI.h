@@ -7,18 +7,22 @@ class ROI : public QObject
 	Q_OBJECT
 
 public:
-	ROI(QObject *parent);
+	ROI(QObject *parent,int,int,int,int);
+	ROI();
 	~ROI();
 	int GetX();
 	int GetY();
 	int GetWidth();
 	int GetHeight();
-	int Set();
+	void SetX(int);
+	void SetY(int);
+	void SetWidth(int);
+	void SetHeight(int);
 
 private:
 	int X;
 	int Y;
-	int width;
-	int height;
+	int Width;
+	int Height;
 
 };
