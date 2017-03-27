@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'FeedScreenNl6648.ui'
+** Form generated from reading UI file 'FeedScreen.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef FEEDSCREENNL6648_H
-#define FEEDSCREENNL6648_H
+#ifndef UI_FEEDSCREEN_H
+#define UI_FEEDSCREEN_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -59,7 +59,7 @@ public:
     {
         if (FeedScreen->objectName().isEmpty())
             FeedScreen->setObjectName(QStringLiteral("FeedScreen"));
-        FeedScreen->resize(757, 533);
+        FeedScreen->resize(733, 545);
         gridLayout = new QGridLayout(FeedScreen);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -278,4 +278,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // FEEDSCREENNL6648_H
+#endif // UI_FEEDSCREEN_H

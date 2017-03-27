@@ -8,6 +8,7 @@ Camera::Camera(QObject *parent,std::string iploc)
 
 Camera::Camera()
 {
+	IPLoc = "0";
 	Params = new HOGParams();
 	regionsLIST = new ROI();
 }

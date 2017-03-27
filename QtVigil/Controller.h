@@ -19,7 +19,7 @@ class Controller : public QObject
 public:
 	Controller(QObject *parent);
 	~Controller();
-	void initializeHoG();
+	void initializeHoG(Camera*);
 	void updateConfig();
 	void intializeSVM();
 	std::string sendLogin();
@@ -35,9 +35,10 @@ public:
 	void SaveFace();
 
 private:
-	Camera *CamList;
+	Camera *Cam;
 	VideoCapture capture;
 	Mat frame;
 	QTimer* tmrTimer;
+	cv::Ptr<cv::cuda::HOG> gpu_hog;
 
 };

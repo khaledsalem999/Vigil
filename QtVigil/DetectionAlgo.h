@@ -9,7 +9,7 @@ class Detection
 {
 
 public:
-	int Detect();
+	bool Detect();
 
 };
 

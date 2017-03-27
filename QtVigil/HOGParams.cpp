@@ -12,7 +12,7 @@ HOGParams::HOGParams()
 {
 	Scale = 1.05;
 	GroupThreshold = 1;
-	HitThreshold = 05;
+	HitThreshold = 0.5;
 }
 
 HOGParams::~HOGParams()
