@@ -3,6 +3,7 @@
 #include <QObject>
 #include <Camera.h>
 #include <qtimer.h>
+#include <DetectionAlgo.h>
 #include <FeedScreen.h>
 #include <opencv2/core/utility.hpp>
 #include "opencv2/cudaobjdetect.hpp"
@@ -18,10 +19,13 @@ class Controller : public QObject
 
 public:
 	Controller(QObject *parent);
+	Controller(std::string,std::string);
 	~Controller();
 	void initializeHoG(Camera*);
 	void updateConfig();
 	void intializeSVM();
+	void UpdateView(Camera*);
+	void UpdateView(Anomaly*, Camera*);
 	std::string sendLogin();
 	std::string GetFaces();
 	std::string GetAnomalies();
@@ -35,6 +39,8 @@ public:
 	void SaveFace();
 
 private:
+	Detection *AlgorithmHOG;
+	Detection *AlgorithmMEAN;
 	Camera *Cam;
 	VideoCapture capture;
 	Mat frame;

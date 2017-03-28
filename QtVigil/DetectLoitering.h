@@ -11,5 +11,5 @@ class DetectLoitering : public QObject,public Detection
 public:
 	DetectLoitering(QObject *parent);
 	~DetectLoitering();
-	int Detect();
+	Anomaly Detect();
 };

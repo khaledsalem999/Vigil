@@ -11,6 +11,6 @@ class DetectHOGSVM : public QObject,public Detection
 public:
 	DetectHOGSVM(QObject *parent);
 	~DetectHOGSVM();
-	bool Detect();
+	Anomaly Detect();
 
 };

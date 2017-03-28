@@ -4,12 +4,13 @@
 #define DETECTION_H
 
 #include <QtPlugin>
+#include <Anomaly.h>
 
 class Detection
 {
 
 public:
-	bool Detect();
+	Anomaly Detect();
 
 };
 

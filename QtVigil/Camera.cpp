@@ -8,7 +8,7 @@ Camera::Camera(QObject *parent,std::string iploc)
 
 Camera::Camera()
 {
-	IPLoc = "0";
+	IPLoc = "C://vc.avi";
 	Params = new HOGParams();
 	regionsLIST = new ROI();
 }

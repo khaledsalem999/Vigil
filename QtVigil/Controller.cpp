@@ -7,6 +7,11 @@ Controller::Controller(QObject *parent)
 	initializeHoG(Cam);
 }
 
+Controller::Controller(std::string user, std::string pass)
+{
+
+}
+
 Controller::~Controller()
 {
 }
@@ -14,7 +19,7 @@ Controller::~Controller()
 void Controller::initializeHoG(Camera* Cam)
 {
 	//VAR
-	capture.open(0);
+	capture.open(Cam->GetIPLoc());
 
 	//CONST
 	capture.set(CV_CAP_PROP_FRAME_WIDTH, 840);
@@ -37,6 +42,14 @@ void Controller::updateConfig()
 
 }
 void Controller::intializeSVM()
+{
+
+}
+void UpdateView(Camera*)
+{
+
+}
+void UpdateView(Anomaly*, Camera*)
 {
 
 }
