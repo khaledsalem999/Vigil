@@ -1,19 +1,25 @@
 #include "DBHandler.h"
 
-DBHandler::DBHandler(QObject *parent)
+DBHandler::DBHandler(QObject *parent, std::string dbLoc, std::string user, std::string pass)
 	: QObject(parent)
 {
+		this->dbLoc = dbLoc;
+		this->user = user;
+		this->pass = pass;
 }
 
 DBHandler::~DBHandler()
 {
 }
 
-void DBHandler::Insert()
+bool Insert(std::string query) 
 {
-
 }
-std::string DBHandler::Retrive()
+
+std::vector<std::string> Select(std::string query) 
 {
-	return "no";
+}
+
+bool Update(std::string query) 
+{
 }

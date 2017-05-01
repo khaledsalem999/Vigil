@@ -24,7 +24,7 @@ int ROI::GetX()
 }
 int ROI::GetY()
 {
-	return X;
+	return Y;
 }
 int ROI::GetWidth()
 {
@@ -32,7 +32,7 @@ int ROI::GetWidth()
 }
 int ROI::GetHeight()
 {
-	return Width;
+	return Height;
 }
 void ROI::SetX(int x)
 {

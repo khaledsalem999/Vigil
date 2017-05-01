@@ -7,9 +7,14 @@ class DBHandler : public QObject
 	Q_OBJECT
 
 public:
-	DBHandler(QObject *parent);
+	DBHandler::DBHandler(QObject *parent, std::string dbLoc, std::string user, std::string pass);
 	~DBHandler();
-	void Insert();
-	std::string Retrive();
+	bool Insert(std::string query);
+	std::vector<std::string> Select(std::string query);
+	bool Update(std::string query);
 
+private:
+	std::string dbLoc;
+	std::string user;
+	std::string pass;
 };
