@@ -3,6 +3,16 @@
 #include <QObject>
 #include <HOGParams.h>
 #include <ROI.h>
+#include <opencv2/core/utility.hpp>
+#include "opencv2/cudaobjdetect.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/objdetect.hpp"
+#include "opencv2/imgproc.hpp"
+#include "opencv2/ml.hpp"
+
+using namespace std;
+using namespace cv;
+using namespace cv::ml;
 
 class Camera : public QObject
 {
@@ -21,8 +31,9 @@ public:
 
 
 private:
-	std::string IPLoc;
+	std::string IP;
 	HOGParams *Params;
-	ROI *regionsLIST;
-	
+	ROI *regionsList;
+	HOGDescriptor *gpu_hog;
+	Ptr<SVM> svm = StatModel::load<SVM>("D://Train//Demo_Detector.yml");
 };

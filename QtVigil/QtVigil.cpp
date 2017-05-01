@@ -15,4 +15,3 @@ std::string QtVigil::GetAnomalies()
 {
 	return "No";
 }
-
