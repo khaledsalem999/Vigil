@@ -243,6 +243,9 @@
     <CustomBuild Include="Anomaly.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="InternalFeed.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_QtVigil.h">
@@ -259,6 +262,9 @@
     </ClInclude>
     <ClInclude Include="DetectionAlgo.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_InternalFeed.h">
+      <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

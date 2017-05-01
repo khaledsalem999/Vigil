@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'InternalFeedae7596.ui'
+** Form generated from reading UI file 'InternalFeed.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef INTERNALFEEDAE7596_H
-#define INTERNALFEEDAE7596_H
+#ifndef UI_INTERNALFEED_H
+#define UI_INTERNALFEED_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -20,21 +20,21 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Form
+class Ui_InternalFeed
 {
 public:
     QVBoxLayout *verticalLayout;
     QLabel *CameraView;
     QLabel *CamName;
 
-    void setupUi(QWidget *Form)
+    void setupUi(QWidget *InternalFeed)
     {
-        if (Form->objectName().isEmpty())
-            Form->setObjectName(QStringLiteral("Form"));
-        Form->resize(327, 293);
-        verticalLayout = new QVBoxLayout(Form);
+        if (InternalFeed->objectName().isEmpty())
+            InternalFeed->setObjectName(QStringLiteral("InternalFeed"));
+        InternalFeed->resize(327, 293);
+        verticalLayout = new QVBoxLayout(InternalFeed);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        CameraView = new QLabel(Form);
+        CameraView = new QLabel(InternalFeed);
         CameraView->setObjectName(QStringLiteral("CameraView"));
         QFont font;
         font.setBold(true);
@@ -46,7 +46,7 @@ public:
 
         verticalLayout->addWidget(CameraView);
 
-        CamName = new QLabel(Form);
+        CamName = new QLabel(InternalFeed);
         CamName->setObjectName(QStringLiteral("CamName"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -60,24 +60,24 @@ public:
         verticalLayout->addWidget(CamName);
 
 
-        retranslateUi(Form);
+        retranslateUi(InternalFeed);
 
-        QMetaObject::connectSlotsByName(Form);
+        QMetaObject::connectSlotsByName(InternalFeed);
     } // setupUi
 
-    void retranslateUi(QWidget *Form)
+    void retranslateUi(QWidget *InternalFeed)
     {
-        Form->setWindowTitle(QApplication::translate("Form", "Form", Q_NULLPTR));
-        CameraView->setText(QApplication::translate("Form", "Camera View", Q_NULLPTR));
-        CamName->setText(QApplication::translate("Form", "Camera Name", Q_NULLPTR));
+        InternalFeed->setWindowTitle(QApplication::translate("InternalFeed", "Form", Q_NULLPTR));
+        CameraView->setText(QApplication::translate("InternalFeed", "Camera View", Q_NULLPTR));
+        CamName->setText(QApplication::translate("InternalFeed", "Camera Name", Q_NULLPTR));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Form: public Ui_Form {};
+    class InternalFeed: public Ui_InternalFeed {};
 } // namespace Ui
 
 QT_END_NAMESPACE
 
-#endif // INTERNALFEEDAE7596_H
+#endif // UI_INTERNALFEED_H
