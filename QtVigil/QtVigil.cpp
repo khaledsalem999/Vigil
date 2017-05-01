@@ -1,5 +1,4 @@
 #include "QtVigil.h"
-#include "ui_InternalFeed.h"
 
 QtVigil::QtVigil(QWidget *parent)
 	: QMainWindow(parent)
@@ -32,3 +31,8 @@ std::vector<Anomaly*> QtVigil::GetFaces()
 	return GetFaces();
 }
 
+
+void QtVigil::on_AddCam_clicked()
+{
+	ui.CamsRegion->addWidget(FeedObj.setupUi);
+}

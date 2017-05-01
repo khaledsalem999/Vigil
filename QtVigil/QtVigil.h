@@ -5,6 +5,7 @@
 #include <Camera.h>
 #include <Anomaly.h>
 #include <vector>
+#include "ui_InternalFeed.h"
 
 class QtVigil : public QMainWindow
 {
@@ -21,6 +22,10 @@ public:
 
 
 
+private slots:
+    void on_AddCam_clicked();
+
 private:
 	Ui::QtVigilClass ui;
+	Ui::InternalFeed FeedObj;
 };
