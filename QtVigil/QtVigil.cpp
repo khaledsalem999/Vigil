@@ -34,5 +34,5 @@ std::vector<Anomaly*> QtVigil::GetFaces()
 
 void QtVigil::on_AddCam_clicked()
 {
-	ui.CamsRegion->addWidget(FeedObj.setupUi);
+//	ui.CamsRegion->addWidget(FeedObj.setupUi);
 }
