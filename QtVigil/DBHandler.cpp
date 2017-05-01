@@ -14,12 +14,16 @@ DBHandler::~DBHandler()
 
 bool Insert(std::string query) 
 {
+	return true;
 }
 
 std::vector<std::string> Select(std::string query) 
 {
+	std::vector<std::string> duh;
+	return duh;
 }
 
 bool Update(std::string query) 
 {
+	return true;
 }

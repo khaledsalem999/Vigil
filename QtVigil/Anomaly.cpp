@@ -1,17 +1,22 @@
 #include "Anomaly.h"
 
-Anomaly::Anomaly(QObject *parent,int ID,ROI *RECT,QDate *DATE,long TIME)
+Anomaly::Anomaly(QObject *parent, int ID, int cam, std::string desc, QDate *DATE)
 	: QObject(parent)
 {
 	id = ID;
-	rect = RECT;
+	camId = cam;
+	description = desc;
 	Date = DATE;
-	TimeStamp = TIME;
+	this->timeStamp = std::chrono::system_clock::now();
 }
 
-Anomaly::Anomaly(int x)
+Anomaly::Anomaly(QObject *parent, int cam, std::string desc, QDate *DATE)
+	: QObject(parent)
 {
-
+	camId = cam;
+	description = desc;
+	Date = DATE;
+	this->timeStamp = std::chrono::system_clock::now();
 }
 
 Anomaly::~Anomaly()
@@ -22,31 +27,39 @@ int Anomaly::GetId()
 {
 	return id;
 }
-ROI* Anomaly::GetRect()
+
+
+int Anomaly::GetCamId()
 {
-	return rect;
+	return camId;
 }
+
 QDate* Anomaly::GetDate()
 {
 	return Date;
 }
-long Anomaly::GetTime()
+
+std::chrono::system_clock::time_point Anomaly::GetTime()
 {
-	return TimeStamp;
+	return timeStamp;
 }
+
 void Anomaly::SetId(int ID)
 {
 	id = ID;
 }
-void Anomaly::SetRect(ROI *RECT)
+
+std::string Anomaly::GetPath()
 {
-	rect = RECT;
+	return path;
 }
-void Anomaly::SetDate(QDate *DATE)
+
+void Anomaly::SetPath(std::string path) 
 {
-	Date = DATE;
+	this->path = path;
 }
-void Anomaly::SetTime(long TIME)
+
+std::string Anomaly::GetDescription() 
 {
-	TimeStamp = TIME;
+	return description;
 }

@@ -2,29 +2,34 @@
 
 #include <QObject>
 #include <ROI.h>
+#include <chrono>
+#include "opencv2/core/utility.hpp"
+
 
 class Anomaly : public QObject
 {
 	Q_OBJECT
 
 public:
-	Anomaly(QObject *parent,int,ROI*,QDate*,long);
-	Anomaly(int);
+	Anomaly(QObject *parent, int,int, std::string, QDate*);
+	Anomaly(QObject *parent,int, std::string, QDate *);
 	~Anomaly();
 	int GetId();
-	ROI* GetRect();
+	int GetCamId();
 	QDate* GetDate();
-	long GetTime();
+	std::chrono::system_clock::time_point GetTime();
 	void SetId(int);
-	void SetRect(ROI*);
-	void SetDate(QDate*);
-	void SetTime(long);
+	std::string GetPath();
+	void SetPath(std::string);
+	std::string GetDescription();
+
 
 private:
 	int id;
-	ROI *rect;
+	int camId;
+	std::chrono::system_clock::time_point timeStamp;
+	std::string description;
 	QDate *Date;
-	long TimeStamp;
-	
-
+	std::string path;
+	std::vector<cv::Mat> Vid;
 };

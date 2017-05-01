@@ -11,5 +11,5 @@ DetectHOGSVM::~DetectHOGSVM()
 
 Anomaly DetectHOGSVM::Detect()
 {
-	return 0;
+	return null;
 }

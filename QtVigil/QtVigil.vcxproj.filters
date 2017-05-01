@@ -91,15 +91,6 @@
     <ClCompile Include="DBHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_DetectLoitering.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_DetectLoitering.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="DetectLoitering.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_Camera.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
@@ -125,15 +116,6 @@
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="HOGParams.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_DetectHOGSVM.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_DetectHOGSVM.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="DetectHOGSVM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_Anomaly.cpp">
@@ -186,9 +168,6 @@
     <CustomBuild Include="DBHandler.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="DetectLoitering.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="Camera.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -196,9 +175,6 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="HOGParams.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="DetectHOGSVM.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="Anomaly.h">
@@ -220,9 +196,6 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_PickCamScreen.h">
       <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DetectionAlgo.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
