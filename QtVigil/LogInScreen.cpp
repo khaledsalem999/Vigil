@@ -10,7 +10,7 @@ LogInScreen::~LogInScreen()
 {
 }
 
-QString LogInScreen::LogIN()
+bool LogInScreen::Login(std::string, std::string)
 {
-	return "Nothing to show for now";
+	return false;
 }

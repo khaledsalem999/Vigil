@@ -6,13 +6,28 @@ QtVigil::QtVigil(QWidget *parent)
 	ui.setupUi(this);
 }
 
-std::string QtVigil::GetFaces()
+void QtVigil::AddObserver(Camera*)
 {
-	return "No";
-}
 
-std::string QtVigil::GetAnomalies()
+}
+void QtVigil::UpdateObserver(Camera*, Anomaly*)
 {
-	return "No";
+
+}
+void QtVigil::UpdateObserver(Camera*)
+{
+
+}
+void QtVigil::RemoveObserver(Camera*)
+{
+
+}
+std::vector<Anomaly*> QtVigil::GetAnomalies()
+{
+	return GetAnomalies();
+}
+std::vector<Anomaly*> QtVigil::GetFaces()
+{
+	return GetFaces();
 }
 

@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include "ui_FeedScreen.h"
+#include <Camera.h>
 
 class FeedScreen : public QWidget
 {
@@ -10,10 +11,10 @@ class FeedScreen : public QWidget
 public:
 	FeedScreen(QWidget *parent = Q_NULLPTR);
 	~FeedScreen();
-	std::string GetCamera();
-	void SetParameters();
-	void ResetParameters();
-	void update();
+	void SetParameters(double,double,int,int);
+	void resetParameters();
+	void update(Camera*);
+
 
 private:
 	Ui::FeedScreen ui;

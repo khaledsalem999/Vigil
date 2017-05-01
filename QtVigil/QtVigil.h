@@ -2,6 +2,9 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_QtVigil.h"
+#include <Camera.h>
+#include <Anomaly.h>
+#include <vector>
 
 class QtVigil : public QMainWindow
 {
@@ -9,10 +12,14 @@ class QtVigil : public QMainWindow
 
 public:
 	QtVigil(QWidget *parent = Q_NULLPTR);
+	void AddObserver(Camera*);
+	void UpdateObserver(Camera*, Anomaly*);
+	void UpdateObserver(Camera*);
+	void RemoveObserver(Camera*);
+	std::vector<Anomaly*> GetAnomalies();
+	std::vector<Anomaly*> GetFaces();
 
-public slots:
-	std::string GetFaces();
-	std::string GetAnomalies();
+
 
 private:
 	Ui::QtVigilClass ui;
