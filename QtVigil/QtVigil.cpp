@@ -1,4 +1,5 @@
 #include "QtVigil.h"
+#include "ui_InternalFeed.h"
 
 QtVigil::QtVigil(QWidget *parent)
 	: QMainWindow(parent)
