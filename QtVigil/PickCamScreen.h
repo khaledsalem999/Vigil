@@ -10,9 +10,8 @@ class PickCamScreen : public QWidget
 public:
 	PickCamScreen(QWidget *parent = Q_NULLPTR);
 	~PickCamScreen();
-
-public slots:
-	void AddCamera();
+	void AddCamScreem();
+	void AddCam();
 
 private:
 	Ui::PickCamScreen ui;

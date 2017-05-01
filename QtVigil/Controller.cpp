@@ -7,6 +7,11 @@ Controller::Controller(QObject *parent)
 	initializeHoG(Cam);
 }
 
+Controller::Controller(std::string user, std::string pass)
+{
+
+}
+
 Controller::~Controller()
 {
 }
@@ -32,31 +37,19 @@ void Controller::initializeHoG(Camera* Cam)
 	gpu_hog->setHitThreshold((Cam->GetHOGParams()->GetHitThreshold()));
 }
 
-void Controller::updateConfig()
+void Controller::updateParams(Camera *Cam, HOGParams *HOGPara)
 {
 
 }
-void Controller::intializeSVM()
+void Controller::UpdateView(Camera *Cam)
 {
 
 }
-std::string Controller::sendLogin()
+void Controller::UpdateView(Anomaly *Anom, Camera *Cam)
 {
-	return "no";
+
 }
-std::string Controller::GetFaces()
-{
-	return "no";
-}
-std::string Controller::GetAnomalies()
-{
-	return "oh";
-}
-Camera* Controller::GetCamera()
-{
-	return Cam;
-}
-void Controller::AddCamera()
+void Controller::AddCamera(Camera *Cam)
 {
 	if (!capture.isOpened())
 	{
@@ -67,7 +60,7 @@ void Controller::AddCamera()
 	connect(tmrTimer, SIGNAL(timeout()), this, SLOT(DetectAnomaly()));
 	tmrTimer->start(20);
 }
-void Controller::DetectAnomaly()
+Anomaly* Controller::DetectAnomaly(Detection *Detect)
 {
 	capture.read(frame);
 	//GPU HOG
@@ -115,24 +108,23 @@ void Controller::DetectAnomaly()
 			rectangle(frame, r.tl(), r.br(), cv::Scalar(0, 255, 0), 3);
 		}
 	}
+
+	return 0;
+
 }
-std::string Controller::DetectFaces()
-{
-	return "nope";
-}
-void Controller::sendAlaram()
+void Controller::SaveAnomaly(std::vector<Mat> Anom)
 {
 
 }
-bool Controller::isFaceDetected()
-{
-	return false;
-}
-void Controller::SaveAnomaly()
+void Controller::RemoveCamera(Camera*)
 {
 
 }
-void Controller::SaveFace()
+std::vector<Anomaly*> Controller::GetAnomalies()
 {
-
+	return GetAnomalies();
+}
+std::vector<Camera*> Controller::GetCameras()
+{
+	return GetCameras();
 }

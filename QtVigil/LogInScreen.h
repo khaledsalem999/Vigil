@@ -1,7 +1,6 @@
 #pragma once
 
 #include <QWidget>
-#include <string.h>
 #include "ui_LogInScreen.h"
 
 class LogInScreen : public QWidget
@@ -11,9 +10,7 @@ class LogInScreen : public QWidget
 public:
 	LogInScreen(QWidget *parent = Q_NULLPTR);
 	~LogInScreen();
-
-public slots:
-	QString LogIN();
+	bool Login(std::string,std::string);
 
 private:
 	Ui::LogInScreen ui;

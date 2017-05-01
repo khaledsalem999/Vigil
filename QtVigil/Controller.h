@@ -3,7 +3,10 @@
 #include <QObject>
 #include <Camera.h>
 #include <qtimer.h>
+#include <DetectionAlgo.h>
 #include <FeedScreen.h>
+#include <DBHandler.h>
+#include <vector>
 #include <opencv2/core/utility.hpp>
 #include "opencv2/cudaobjdetect.hpp"
 #include "opencv2/highgui.hpp"
@@ -18,23 +21,24 @@ class Controller : public QObject
 
 public:
 	Controller(QObject *parent);
+	Controller(std::string,std::string);
 	~Controller();
 	void initializeHoG(Camera*);
-	void updateConfig();
-	void intializeSVM();
-	std::string sendLogin();
-	std::string GetFaces();
-	std::string GetAnomalies();
-	Camera* GetCamera();
-	void AddCamera();
-	void DetectAnomaly();
-	std::string DetectFaces();
-	void sendAlaram();
-	bool isFaceDetected();
-	void SaveAnomaly();
-	void SaveFace();
+	void updateParams(Camera*,HOGParams*);
+	void UpdateView(Camera*);
+	void UpdateView(Anomaly*, Camera*);
+	Anomaly* DetectAnomaly(Detection*);
+	void SaveAnomaly(std::vector<Mat>);
+	void AddCamera(Camera*);
+	void RemoveCamera(Camera*);
+	std::vector<Anomaly*> GetAnomalies();
+	std::vector<Camera*> GetCameras();
+
 
 private:
+	Detection *AlgorithmHOG;
+	Detection *AlgorithmMEAN;
+	DBHandler *dbhandler;
 	Camera *Cam;
 	VideoCapture capture;
 	Mat frame;

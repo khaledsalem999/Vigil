@@ -9,7 +9,7 @@ DetectHOGSVM::~DetectHOGSVM()
 {
 }
 
-bool DetectHOGSVM::Detect()
+Anomaly DetectHOGSVM::Detect()
 {
-	return false;
+	return 0;
 }

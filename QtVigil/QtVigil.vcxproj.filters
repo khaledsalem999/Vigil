@@ -172,6 +172,15 @@
     <ClCompile Include="DetectHOGSVM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_Anomaly.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_Anomaly.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Anomaly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="QtVigil.h">
@@ -229,6 +238,9 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="DetectHOGSVM.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Anomaly.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

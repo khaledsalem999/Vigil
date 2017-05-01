@@ -10,22 +10,15 @@ FeedScreen::~FeedScreen()
 {
 }
 
-std::string FeedScreen::GetCamera()
-{
-	return "C://vc.avi";
-}
-
-void FeedScreen::SetParameters()
-{
-	
-}
-
-void FeedScreen::ResetParameters()
+void FeedScreen::SetParameters(double, double, int, int)
 {
 
 }
+void FeedScreen::resetParameters()
+{
 
-void FeedScreen::update()
+}
+void FeedScreen::update(Camera*)
 {
 
 }

@@ -9,7 +9,7 @@ DetectLoitering::~DetectLoitering()
 {
 }
 
-int DetectLoitering::Detect()
+Anomaly DetectLoitering::Detect()
 {
 	return 0;
 }
