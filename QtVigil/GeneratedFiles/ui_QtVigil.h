@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'QtVigilHp7596.ui'
+** Form generated from reading UI file 'QtVigil.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef QTVIGILHP7596_H
-#define QTVIGILHP7596_H
+#ifndef UI_QTVIGIL_H
+#define UI_QTVIGIL_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -45,7 +45,7 @@ public:
     {
         if (QtVigilClass->objectName().isEmpty())
             QtVigilClass->setObjectName(QStringLiteral("QtVigilClass"));
-        QtVigilClass->resize(966, 591);
+        QtVigilClass->resize(1255, 781);
         centralWidget = new QWidget(QtVigilClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout = new QGridLayout(centralWidget);
@@ -98,7 +98,7 @@ public:
         QtVigilClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QtVigilClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 966, 26));
+        menuBar->setGeometry(QRect(0, 0, 1255, 26));
         QtVigilClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(QtVigilClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -130,4 +130,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // QTVIGILHP7596_H
+#endif // UI_QTVIGIL_H
