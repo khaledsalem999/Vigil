@@ -15,18 +15,29 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="4">
-     <widget class="QPushButton" name="PostiveTrain">
-      <property name="text">
-       <string>Select Postive Training Files</string>
+    <item row="1" column="2" colspan="4">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
       </property>
-     </widget>
-    </item>
-    <item row="2" column="6">
-     <widget class="QPushButton" name="StartTrain">
-      <property name="text">
-       <string>Start Training</string>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
       </property>
+      <widget class="QWidget" name="gridLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>1</x>
+         <y>1</y>
+         <width>741</width>
+         <height>491</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="CamViewReg">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item row="2" column="3">
@@ -52,13 +63,6 @@
       </property>
      </widget>
     </item>
-    <item row="2" column="5">
-     <widget class="QPushButton" name="NegativeTrain">
-      <property name="text">
-       <string>Select Negative Training Files</string>
-      </property>
-     </widget>
-    </item>
     <item row="2" column="2">
      <widget class="QPushButton" name="AddCam">
       <property name="text">
@@ -66,25 +70,35 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="2" rowspan="2" colspan="4">
-     <widget class="QFrame" name="frame">
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
+    <item row="2" column="6">
+     <widget class="QPushButton" name="StartTrain">
+      <property name="text">
+       <string>Start Training</string>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QPushButton" name="NegativeTrain">
+      <property name="text">
+       <string>Select Negative Training Files</string>
       </property>
-      <widget class="QWidget" name="gridLayoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>741</width>
-         <height>521</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="CamsRegion"/>
-      </widget>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="PostiveTrain">
+      <property name="text">
+       <string>Select Postive Training Files</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" colspan="4">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Cameras Region</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
    </layout>

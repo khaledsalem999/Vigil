@@ -11,9 +11,6 @@ int main(int argc, char *argv[])
 	FeedScreen Feed;
 	Camera *Cam;
 	Cam = new Camera();
-	//Controller Control = new Controller("Khaled","Hola");
-	//Control.initializeHoG(Cam);
 	w.show();
-	Feed.show();
 	return a.exec();
 }

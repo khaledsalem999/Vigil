@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'QtVigilHp5944.ui'
+** Form generated from reading UI file 'QtVigil.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef QTVIGILHP5944_H
-#define QTVIGILHP5944_H
+#ifndef UI_QTVIGIL_H
+#define UI_QTVIGIL_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -31,15 +31,16 @@ class Ui_QtVigilClass
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout;
-    QPushButton *PostiveTrain;
-    QPushButton *StartTrain;
-    QPushButton *RemoveCam;
-    QLabel *label;
-    QPushButton *NegativeTrain;
-    QPushButton *AddCam;
     QFrame *frame;
     QWidget *gridLayoutWidget;
-    QGridLayout *CamsRegion;
+    QGridLayout *CamViewReg;
+    QPushButton *RemoveCam;
+    QLabel *label;
+    QPushButton *AddCam;
+    QPushButton *StartTrain;
+    QPushButton *NegativeTrain;
+    QPushButton *PostiveTrain;
+    QLabel *label_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -55,15 +56,21 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        PostiveTrain = new QPushButton(centralWidget);
-        PostiveTrain->setObjectName(QStringLiteral("PostiveTrain"));
+        frame = new QFrame(centralWidget);
+        frame->setObjectName(QStringLiteral("frame"));
+        frame->setFrameShape(QFrame::Box);
+        frame->setFrameShadow(QFrame::Plain);
+        gridLayoutWidget = new QWidget(frame);
+        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(1, 1, 741, 491));
+        CamViewReg = new QGridLayout(gridLayoutWidget);
+        CamViewReg->setSpacing(6);
+        CamViewReg->setContentsMargins(11, 11, 11, 11);
+        CamViewReg->setObjectName(QStringLiteral("CamViewReg"));
+        CamViewReg->setSizeConstraint(QLayout::SetFixedSize);
+        CamViewReg->setContentsMargins(0, 0, 0, 0);
 
-        gridLayout->addWidget(PostiveTrain, 2, 4, 1, 1);
-
-        StartTrain = new QPushButton(centralWidget);
-        StartTrain->setObjectName(QStringLiteral("StartTrain"));
-
-        gridLayout->addWidget(StartTrain, 2, 6, 1, 1);
+        gridLayout->addWidget(frame, 1, 2, 1, 4);
 
         RemoveCam = new QPushButton(centralWidget);
         RemoveCam->setObjectName(QStringLiteral("RemoveCam"));
@@ -81,30 +88,31 @@ public:
 
         gridLayout->addWidget(label, 0, 6, 1, 1);
 
-        NegativeTrain = new QPushButton(centralWidget);
-        NegativeTrain->setObjectName(QStringLiteral("NegativeTrain"));
-
-        gridLayout->addWidget(NegativeTrain, 2, 5, 1, 1);
-
         AddCam = new QPushButton(centralWidget);
         AddCam->setObjectName(QStringLiteral("AddCam"));
 
         gridLayout->addWidget(AddCam, 2, 2, 1, 1);
 
-        frame = new QFrame(centralWidget);
-        frame->setObjectName(QStringLiteral("frame"));
-        frame->setFrameShape(QFrame::Box);
-        frame->setFrameShadow(QFrame::Plain);
-        gridLayoutWidget = new QWidget(frame);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 0, 741, 521));
-        CamsRegion = new QGridLayout(gridLayoutWidget);
-        CamsRegion->setSpacing(6);
-        CamsRegion->setContentsMargins(11, 11, 11, 11);
-        CamsRegion->setObjectName(QStringLiteral("CamsRegion"));
-        CamsRegion->setContentsMargins(0, 0, 0, 0);
+        StartTrain = new QPushButton(centralWidget);
+        StartTrain->setObjectName(QStringLiteral("StartTrain"));
 
-        gridLayout->addWidget(frame, 0, 2, 2, 4);
+        gridLayout->addWidget(StartTrain, 2, 6, 1, 1);
+
+        NegativeTrain = new QPushButton(centralWidget);
+        NegativeTrain->setObjectName(QStringLiteral("NegativeTrain"));
+
+        gridLayout->addWidget(NegativeTrain, 2, 5, 1, 1);
+
+        PostiveTrain = new QPushButton(centralWidget);
+        PostiveTrain->setObjectName(QStringLiteral("PostiveTrain"));
+
+        gridLayout->addWidget(PostiveTrain, 2, 4, 1, 1);
+
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setAlignment(Qt::AlignCenter);
+
+        gridLayout->addWidget(label_2, 0, 2, 1, 4);
 
         QtVigilClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(QtVigilClass);
@@ -126,12 +134,13 @@ public:
     void retranslateUi(QMainWindow *QtVigilClass)
     {
         QtVigilClass->setWindowTitle(QApplication::translate("QtVigilClass", "QtVigil", Q_NULLPTR));
-        PostiveTrain->setText(QApplication::translate("QtVigilClass", "Select Postive Training Files", Q_NULLPTR));
-        StartTrain->setText(QApplication::translate("QtVigilClass", "Start Training", Q_NULLPTR));
         RemoveCam->setText(QApplication::translate("QtVigilClass", "Remove Camera", Q_NULLPTR));
         label->setText(QApplication::translate("QtVigilClass", "Anomalies Detected", Q_NULLPTR));
-        NegativeTrain->setText(QApplication::translate("QtVigilClass", "Select Negative Training Files", Q_NULLPTR));
         AddCam->setText(QApplication::translate("QtVigilClass", "Add Camera", Q_NULLPTR));
+        StartTrain->setText(QApplication::translate("QtVigilClass", "Start Training", Q_NULLPTR));
+        NegativeTrain->setText(QApplication::translate("QtVigilClass", "Select Negative Training Files", Q_NULLPTR));
+        PostiveTrain->setText(QApplication::translate("QtVigilClass", "Select Postive Training Files", Q_NULLPTR));
+        label_2->setText(QApplication::translate("QtVigilClass", "Cameras Region", Q_NULLPTR));
     } // retranslateUi
 
 };
@@ -142,4 +151,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // QTVIGILHP5944_H
+#endif // UI_QTVIGIL_H

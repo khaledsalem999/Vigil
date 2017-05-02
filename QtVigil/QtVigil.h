@@ -5,7 +5,9 @@
 #include <Camera.h>
 #include <Anomaly.h>
 #include <vector>
-#include "ui_InternalFeed.h"
+#include <PickCamScreen.h>
+#include <qfiledialog.h>
+#include <qmessagebox.h>
 
 class QtVigil : public QMainWindow
 {
@@ -17,15 +19,25 @@ public:
 	void UpdateObserver(Camera*, Anomaly*);
 	void UpdateObserver(Camera*);
 	void RemoveObserver(Camera*);
+	void AddCams();
 	std::vector<Anomaly*> GetAnomalies();
 	std::vector<Anomaly*> GetFaces();
+	QString FilenamePos;
+	QString FilenameNeg;
+	QLabel *CamView[10];
+	QLabel *CamName[10];
+	QWidgetList *List;
+	int CamCounter;
+	int Rows;
+	int Cols;
 
 
 
 private slots:
     void on_AddCam_clicked();
+	void on_PostiveTrain_clicked();
+	void on_NegativeTrain_clicked();
 
 private:
 	Ui::QtVigilClass ui;
-	Ui::InternalFeed FeedObj;
 };

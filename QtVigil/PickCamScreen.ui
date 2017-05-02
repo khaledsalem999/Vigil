@@ -47,7 +47,7 @@
     <widget class="QLineEdit" name="lineEdit"/>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="AddFeed">
      <property name="text">
       <string>Start Camera</string>
      </property>

@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'PickCamScreen.ui'
+** Form generated from reading UI file 'PickCamScreenNl3160.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_PICKCAMSCREEN_H
-#define UI_PICKCAMSCREEN_H
+#ifndef PICKCAMSCREENNL3160_H
+#define PICKCAMSCREENNL3160_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -31,7 +31,7 @@ public:
     QComboBox *comboBox;
     QLabel *label_2;
     QLineEdit *lineEdit;
-    QPushButton *pushButton;
+    QPushButton *AddFeed;
 
     void setupUi(QWidget *PickCamScreen)
     {
@@ -69,10 +69,10 @@ public:
 
         verticalLayout->addWidget(lineEdit);
 
-        pushButton = new QPushButton(PickCamScreen);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        AddFeed = new QPushButton(PickCamScreen);
+        AddFeed->setObjectName(QStringLiteral("AddFeed"));
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(AddFeed);
 
 
         retranslateUi(PickCamScreen);
@@ -85,7 +85,7 @@ public:
         PickCamScreen->setWindowTitle(QApplication::translate("PickCamScreen", "PickCamScreen", Q_NULLPTR));
         label->setText(QApplication::translate("PickCamScreen", "Select Camera", Q_NULLPTR));
         label_2->setText(QApplication::translate("PickCamScreen", "IP camera", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("PickCamScreen", "Start Camera", Q_NULLPTR));
+        AddFeed->setText(QApplication::translate("PickCamScreen", "Start Camera", Q_NULLPTR));
     } // retranslateUi
 
 };
@@ -96,4 +96,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_PICKCAMSCREEN_H
+#endif // PICKCAMSCREENNL3160_H

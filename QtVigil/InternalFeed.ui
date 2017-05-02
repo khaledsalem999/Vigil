@@ -6,63 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>327</width>
-    <height>293</height>
+    <width>505</width>
+    <height>354</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>InternalFeed</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QLabel" name="CameraView">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="autoFillBackground">
-      <bool>true</bool>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="text">
-      <string>Camera View</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="CamName">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="text">
-      <string>Camera Name</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
+    <widget class="QWidget" name="IntCam" native="true">
+     <widget class="QWidget" name="gridLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>2</x>
+        <y>0</y>
+        <width>481</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="InternalCam">
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="CamName">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </item>
   </layout>
  </widget>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
