@@ -1,5 +1,9 @@
 #include "DBHandler.h"
 
+DBHandler::DBHandler()
+{
+}
+
 DBHandler::DBHandler(QObject *parent, std::string dbLoc, std::string user, std::string pass)
 	: QObject(parent)
 {

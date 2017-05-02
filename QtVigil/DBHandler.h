@@ -10,7 +10,8 @@ class DBHandler : public QObject
 
 
 public:
-	DBHandler::DBHandler(QObject *parent, std::string dbLoc, std::string user, std::string pass);
+	DBHandler();
+	DBHandler(QObject *parent, std::string dbLoc, std::string user, std::string pass);
 	~DBHandler();
 	bool Insert(std::string query);
 	std::vector<std::string> Select(std::string query);
