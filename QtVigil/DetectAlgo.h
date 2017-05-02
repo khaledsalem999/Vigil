@@ -1,17 +1,21 @@
 #pragma once
 
+#ifndef DetectAlgo_H
+#define DetectAlgo_H
+
 #include <QtPlugin>
 #include <Anomaly.h>
 
-
-class DetectAlgo
+class DetectAlgo : public QObject
 {
+
 public:
-	virtual ~DetectAlgo() {} // do not forget this
+	Anomaly Detect();
 
-signals: // <- ignored by moc and only serves as documentation aid
-		 // The code will work exactly the same if signals: is absent.
-	virtual void someThingHappened() = 0;
-}
+};
 
-Q_DECLARE_INTERFACE(DetectAlgo, "DetectAlgo") // define this out of namespace scope
+#define DETECTION_iid "Detection Function Interface"
+
+Q_DECLARE_INTERFACE(DetectAlgo, DETECTION_iid)
+
+#endif // IMYINTERFACE_H
