@@ -7,19 +7,21 @@ class HOGParams : public QObject
 	Q_OBJECT
 
 public:
-	HOGParams(QObject *parent,double,double,double);
+	HOGParams(QObject *parent,double,int,double,int);
 	HOGParams();
 	~HOGParams();
 	double GetScale();
 	double GetHitThreshold();
-	double GetGroupThreshold();
+	int GetGroupThreshold();
+	int GetLevels();
 	void SetScale(double);
-	void SetGroupThreshold(double);
+	void SetGroupThreshold(int);
 	void SetHitThreshold(double);
+	void SetLevels(int);
 
 private:
 	double Scale;
-	double GroupThreshold;
+	int GroupThreshold;
 	double HitThreshold;
-
+	int numLevels;
 };

@@ -1,6 +1,6 @@
 #include "Anomaly.h"
 
-Anomaly::Anomaly(QObject *parent, int ID, int cam, std::string desc, QDate *DATE)
+Anomaly::Anomaly(QObject *parent, int ID, int cam, std::string desc, std::string DATE)
 	: QObject(parent)
 {
 	id = ID;
@@ -10,7 +10,7 @@ Anomaly::Anomaly(QObject *parent, int ID, int cam, std::string desc, QDate *DATE
 	this->timeStamp = std::chrono::system_clock::now();
 }
 
-Anomaly::Anomaly(QObject *parent, int cam, std::string desc, QDate *DATE)
+Anomaly::Anomaly(QObject *parent, int cam, std::string desc, std::string DATE)
 	: QObject(parent)
 {
 	camId = cam;
@@ -34,7 +34,7 @@ int Anomaly::GetCamId()
 	return camId;
 }
 
-QDate* Anomaly::GetDate()
+std::string Anomaly::GetDate()
 {
 	return Date;
 }
