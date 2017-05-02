@@ -10,13 +10,14 @@ class Anomaly : public QObject
 {
 	Q_OBJECT
 
+
 public:
-	Anomaly(QObject *parent, int,int, std::string, QDate*);
-	Anomaly(QObject *parent,int, std::string, QDate *);
+	Anomaly(QObject *parent, int,int, std::string, std::string);
+	Anomaly(QObject *parent,int, std::string, std::string);
 	~Anomaly();
 	int GetId();
 	int GetCamId();
-	QDate* GetDate();
+	std::string GetDate();
 	std::chrono::system_clock::time_point GetTime();
 	void SetId(int);
 	std::string GetPath();
@@ -29,7 +30,9 @@ private:
 	int camId;
 	std::chrono::system_clock::time_point timeStamp;
 	std::string description;
-	QDate *Date;
+	std::string Date;
 	std::string path;
 	std::vector<cv::Mat> Vid;
+
+
 };

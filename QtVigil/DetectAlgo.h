@@ -11,7 +11,6 @@ class DetectAlgo : public QObject
 
 public:
 	Anomaly Detect();
-
 };
 
 #define DETECTION_iid "Detection Function Interface"
