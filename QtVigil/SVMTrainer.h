@@ -18,7 +18,6 @@ public:
 	void convert_to_ml(const std::vector<cv::Mat>& train_samples, cv::Mat & trainData);
 	void load_images(const string & filename, vector<Mat>& img_lst);
 	void sample_neg(const vector<Mat>& full_neg_lst, vector<Mat>& neg_lst, const Size & size);
-	Mat get_hogdescriptor_visu(const Mat & color_origImg, vector<float>& descriptorValues, const Size & size);
 	void compute_hog(const vector<Mat>& img_lst, vector<Mat>& gradient_lst, const Size & size);
 	void train_svm(const vector<Mat>& gradient_lst, const vector<int>& labels);
 	void draw_locations(Mat & img, const vector<Rect>& locations, const Scalar & color);
