@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
 	mainWindow.show();
 	feedWindow.show();
 
-	Camera *Cam;
-	Cam = new Camera();
+	//Camera *Cam;
+	//Cam = new Camera();
 
 	return a.exec();
 }

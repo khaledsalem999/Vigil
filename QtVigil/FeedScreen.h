@@ -32,6 +32,8 @@ public:
 	void SetParameters(double,double,int,int);
 	void resetParameters();
 	void update(Camera*);
+
+public slots:
 	void refresh();
 
 
