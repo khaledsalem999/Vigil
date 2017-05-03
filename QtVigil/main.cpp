@@ -7,10 +7,13 @@
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	QtVigil w;
-	FeedScreen Feed;
+	QtVigil mainWindow;
+	FeedScreen feedWindow;
+	mainWindow.show();
+	feedWindow.show();
+
 	Camera *Cam;
 	Cam = new Camera();
-	w.show();
+
 	return a.exec();
 }

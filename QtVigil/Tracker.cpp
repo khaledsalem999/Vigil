@@ -30,6 +30,6 @@ bool Tracker::isLoitering()
 Anomaly * Tracker::isAnomaly()
 {
 	DetectSVM * detector = new DetectSVM(this, frame, "D://Train//Demo_Detector.yml");
-	detector->Detect();
-	return detector->Detect();
+	detector->Detect(frame);
+	return detector->Detect(frame);
 }

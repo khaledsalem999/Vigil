@@ -12,7 +12,7 @@ DetectSVM::~DetectSVM()
 {
 }
 
-Anomaly * DetectSVM::Detect() {
+Anomaly * DetectSVM::Detect(cv::Mat frame) {
 
 	//check current frame for actions
 	HOGDescriptor hog;

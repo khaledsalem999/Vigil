@@ -23,7 +23,7 @@ public:
 	~DetectSVM();
 
 public slots:
-	Anomaly * Detect();
+	Anomaly * Detect(cv::Mat);
 
 private:
 	cv::Mat frame;
