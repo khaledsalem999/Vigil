@@ -66,7 +66,7 @@ void QtVigil::on_PostiveTrain_clicked()
 		this,
 		tr("Open Training File"),
 		"C://",
-		"Training Files (*.lst)"
+		"Training Files (*.txt)"
 	);
 }
 
@@ -76,8 +76,21 @@ void QtVigil::on_NegativeTrain_clicked()
 		this,
 		tr("Open Training File"),
 		"C://",
-		"Training Files (*.lst)"
+		"Training Files (*.txt)"
 	);
+}
+
+void QtVigil::on_StartTrain_clicked()
+{
+	//std::thread trainThread(TrainingThread);
+
+	//std::thread t([] {
+	//	TrainingThread;
+	//});
+
+	//trainThread.join();
+
+	TrainingThread();
 }
 
 void QtVigil::AddCams()
@@ -101,4 +114,13 @@ void QtVigil::AddCams()
 			Rows++;
 		}
 	}
+}
+
+void QtVigil::TrainingThread() {
+	//create trainer
+	SVMTrainer trainer = new SVMTrainer(this);
+	//initiliaze and start training
+	trainer.initializeSVM(FilenamePos, FilenameNeg);
+	//done when back in response, till threading.
+	//after threading can show pop up of done
 }
