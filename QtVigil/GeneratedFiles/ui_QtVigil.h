@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'QtVigilHp5452.ui'
+** Form generated from reading UI file 'QtVigil.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef QTVIGILHP5452_H
-#define QTVIGILHP5452_H
+#ifndef UI_QTVIGIL_H
+#define UI_QTVIGIL_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -128,6 +128,7 @@ public:
         AnomViewReg->setSpacing(6);
         AnomViewReg->setContentsMargins(11, 11, 11, 11);
         AnomViewReg->setObjectName(QStringLiteral("AnomViewReg"));
+        AnomViewReg->setSizeConstraint(QLayout::SetFixedSize);
         AnomViewReg->setContentsMargins(0, 0, 0, 0);
 
         gridLayout->addWidget(frame_2, 1, 6, 1, 1);
@@ -169,4 +170,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // QTVIGILHP5452_H
+#endif // UI_QTVIGIL_H

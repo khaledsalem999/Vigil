@@ -118,7 +118,11 @@
          <height>501</height>
         </rect>
        </property>
-       <layout class="QGridLayout" name="AnomViewReg"/>
+       <layout class="QGridLayout" name="AnomViewReg">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
+       </layout>
       </widget>
      </widget>
     </item>
