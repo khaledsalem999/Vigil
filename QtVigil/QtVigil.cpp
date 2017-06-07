@@ -7,6 +7,10 @@ QtVigil::QtVigil(QWidget *parent)
 	CamCounter = 0;
 	Rows = 0;
 	Cols = 0;
+
+	PickWindow = new PickCamScreen();
+	QObject::connect(PickWindow, SIGNAL(clicked()), this, SLOT(AddCams()));
+
 	for (int i = 0; i < 10; i++) {
 		CamView[i] = new QLabel();
 		CamName[i] = new QLabel();
@@ -23,6 +27,24 @@ QtVigil::QtVigil(QWidget *parent)
 		CamName[i]->setText("Camera "+CamCounter);
 		CamView[i]->setAlignment(Qt::AlignHCenter);
 		CamName[i]->setAlignment(Qt::AlignHCenter);
+	}
+
+	for (int i = 0; i < 10; i++) {
+		AnomView[i] = new QLabel();
+		AnomName[i] = new QLabel();
+		QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
+		AnomView[i]->setMinimumWidth(150);
+		AnomName[i]->setMinimumWidth(150);
+		AnomView[i]->setMinimumHeight(150);
+		AnomName[i]->setMinimumHeight(30);
+		AnomView[i]->setSizePolicy(sizePolicy2);
+		AnomName[i]->setSizePolicy(sizePolicy2);
+		AnomView[i]->setFrameShape(QFrame::Box);
+		AnomName[i]->setFrameShape(QFrame::Box);
+		AnomView[i]->setText("Anomaly Detected");
+		AnomName[i]->setText("Anomaly " + CamCounter);
+		AnomView[i]->setAlignment(Qt::AlignHCenter);
+		AnomName[i]->setAlignment(Qt::AlignHCenter);
 	}
 
 }
@@ -55,9 +77,10 @@ std::vector<Anomaly*> QtVigil::GetFaces()
 
 void QtVigil::on_AddCam_clicked()
 {
-	PickCamScreen *PickWindow;
-	PickWindow = new PickCamScreen();
+	
 	PickWindow->show();
+	//AddCams();
+	//AddAnoms();
 }
 
 void QtVigil::on_PostiveTrain_clicked()
@@ -115,6 +138,19 @@ void QtVigil::AddCams()
 		}
 	}
 }
+
+
+void QtVigil::AddAnoms()
+{
+	if (CamCounter != 10)
+	{
+		ui.AnomViewReg->addWidget(AnomView[CamCounter], Cols, 0);
+		ui.AnomViewReg->addWidget(AnomName[CamCounter], Cols + 1, 0);
+		CamCounter++;
+		Cols++;
+	}
+}
+
 
 void QtVigil::TrainingThread() {
 	//create trainer

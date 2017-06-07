@@ -17,12 +17,12 @@ class QtVigil : public QMainWindow
 	Q_OBJECT
 
 public:
+	Ui::QtVigilClass ui;
 	QtVigil(QWidget *parent = Q_NULLPTR);
 	void AddObserver(Camera*);
 	void UpdateObserver(Camera*, Anomaly*);
 	void UpdateObserver(Camera*);
 	void RemoveObserver(Camera*);
-	void AddCams();
 	void TrainingThread();
 	std::vector<Anomaly*> GetAnomalies();
 	std::vector<Anomaly*> GetFaces();
@@ -30,12 +30,16 @@ public:
 	QString FilenameNeg;
 	QLabel *CamView[10];
 	QLabel *CamName[10];
+	QLabel *AnomView[10];
+	QLabel *AnomName[10];
 	QWidgetList *List;
 	int CamCounter;
 	int Rows;
 	int Cols;
 
-
+public slots:
+	void AddCams();
+	void AddAnoms();
 
 private slots:
     void on_AddCam_clicked();
@@ -44,5 +48,5 @@ private slots:
 	void on_StartTrain_clicked();
 
 private:
-	Ui::QtVigilClass ui;
+	PickCamScreen *PickWindow;
 };

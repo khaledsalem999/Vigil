@@ -7,40 +7,45 @@
 message("You are running qmake on a generated .pro file. This may not work!")
 
 
-HEADERS += ./DetectionAlgo.h \
-    ./QtVigil.h \
+HEADERS += ./QtVigil.h \
+    ./SVMTrainer.h \
+    ./Tracker.h \
+    ./ObserverUser.h \
     ./HOGParams.h \
     ./ROI.h \
-    ./DetectFaces.h \
-    ./DetectHandSwing.h \
     ./Camera.h \
-    ./Model.h \
-    ./View.h \
+    ./Anomaly.h \
     ./PickCamScreen.h \
     ./LogInScreen.h \
     ./FeedScreen.h \
-    ./Controller.h \
     ./DBHandler.h \
-    ./DetectLoitering.h \
-    ./DetectJumping.h
-SOURCES += ./Camera.cpp \
-    ./Controller.cpp \
+    ./FileManager.h \
+    ./DetectAlgo.h \
+    ./DetectSVM.h \
+    ./DetectHOG.h
+SOURCES += ./Anomaly.cpp \
+    ./Camera.cpp \
     ./DBHandler.cpp \
-    ./DetectFaces.cpp \
-    ./DetectHandSwing.cpp \
-    ./DetectJumping.cpp \
-    ./DetectLoitering.cpp \
+    ./DetectHOG.cpp \
+    ./DetectSVM.cpp \
     ./FeedScreen.cpp \
+    ./FileManager.cpp \
+    ./GeneratedFiles/Debug/moc_DetectHOG.cpp \
+    ./GeneratedFiles/Debug/moc_DetectSVM.cpp \
+    ./GeneratedFiles/Debug/moc_ObserverUser.cpp \
+    ./GeneratedFiles/Debug/moc_Tracker.cpp \
     ./HOGParams.cpp \
     ./LogInScreen.cpp \
     ./main.cpp \
-    ./Model.cpp \
+    ./ObserverUser.cpp \
     ./PickCamScreen.cpp \
     ./QtVigil.cpp \
     ./ROI.cpp \
-    ./View.cpp
+    ./SVMTrainer.cpp \
+    ./Tracker.cpp
 FORMS += ./QtVigil.ui \
     ./FeedScreen.ui \
     ./LogInScreen.ui \
-    ./PickCamScreen.ui
+    ./PickCamScreen.ui \
+    ./InternalFeed.ui
 RESOURCES += QtVigil.qrc

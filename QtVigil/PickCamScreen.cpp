@@ -21,4 +21,6 @@ void PickCamScreen::AddCam()
 
 void PickCamScreen::on_AddFeed_clicked()
 {
+	emit clicked();
+	this->close();
 }
