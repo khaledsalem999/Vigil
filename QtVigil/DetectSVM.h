@@ -9,6 +9,8 @@
 #include "opencv2/objdetect.hpp"
 #include "opencv2/imgproc.hpp"
 #include "opencv2/ml.hpp"
+#include "opencv2\cudabgsegm.hpp"
+
 
 using namespace std;
 using namespace cv;
@@ -21,6 +23,7 @@ class DetectSVM : public QObject, public DetectAlgo
 public:
 	DetectSVM(QObject *parent, cv::Mat, std::string);
 	~DetectSVM();
+	vector< vector< Point> > BackGroundSub(cv::Mat);
 
 public slots:
 	Anomaly * Detect(cv::Mat);

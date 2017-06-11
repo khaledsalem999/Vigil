@@ -44,7 +44,7 @@ std::vector<cv::Mat> DetectHOG::Detect()
 		r.y += cvRound(r.height*0.07);
 		r.height = cvRound(r.height*0.8);
 
-		C = r | RoI;
+		//C = r | RoI;
 
 		if (C == r || C == RoI) {
 			//a mat for detected part in frame by HOG
@@ -78,7 +78,7 @@ void DetectHOG::get_svm_detector(std::string, std::vector< float >& hog_detector
 
 	CV_Assert(alpha.total() == 1 && svidx.total() == 1 && sv_total == 10);
 	CV_Assert((alpha.type() == CV_64F && alpha.at<double>(0) == 1.) ||
-		(alpha.type() == CV_32F && alpha.at<float>(0) == 1.f));
+		(alpha.type() == CV_32F && alpha.at<float>(0) == 1.f)); 
 	CV_Assert(sv.type() == CV_32F);
 	hog_detector.clear();
 

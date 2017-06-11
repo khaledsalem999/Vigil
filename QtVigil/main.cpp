@@ -8,9 +8,10 @@ int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	QtVigil mainWindow;
-	//FeedScreen feedWindow;
-	mainWindow.show();
-	//feedWindow.show();
+	FeedScreen feedWindow;
+	//mainWindow.show();
+	feedWindow.show();
+	feedWindow.raise();
 	
 	//Camera *Cam;
 	//Cam = new Camera();
