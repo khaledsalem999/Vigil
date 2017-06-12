@@ -24,3 +24,15 @@ void PickCamScreen::on_AddFeed_clicked()
 	emit clicked();
 	this->close();
 }
+
+void PickCamScreen::on_OpenVideo_clicked()
+{
+	FilenameVid = QFileDialog::getOpenFileName(
+		this,
+		tr("Open Training File"),
+		"C://",
+		"Video Files (*.avi *.mp4 *.mov *.mkv)"
+	);
+
+	ui.VideoLocation->setText(FilenameVid);
+}

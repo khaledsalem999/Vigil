@@ -2,6 +2,7 @@
 
 #include <QWidget>
 #include "ui_PickCamScreen.h"
+#include <qfiledialog.h>
 
 class PickCamScreen : public QWidget
 {
@@ -12,12 +13,14 @@ public:
 	~PickCamScreen();
 	void AddCamScreem();
 	void AddCam();
+	QString FilenameVid;
 
 signals:
 	void clicked();
 
 private slots:
 	void on_AddFeed_clicked();
+	void on_OpenVideo_clicked();
 
 public slots:
 	
