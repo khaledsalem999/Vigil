@@ -33,9 +33,9 @@ QtVigil::QtVigil(QWidget *parent)
 		AnomView[i] = new QLabel();
 		AnomName[i] = new QLabel();
 		QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Fixed);
-		AnomView[i]->setMinimumWidth(180);
-		AnomName[i]->setMinimumWidth(180);
-		AnomView[i]->setMinimumHeight(180);
+		AnomView[i]->setMinimumWidth(150);
+		AnomName[i]->setMinimumWidth(150);
+		AnomView[i]->setMinimumHeight(150);
 		AnomName[i]->setMinimumHeight(30);
 		AnomView[i]->setSizePolicy(sizePolicy2);
 		AnomName[i]->setSizePolicy(sizePolicy2);

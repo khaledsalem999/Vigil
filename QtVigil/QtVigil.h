@@ -6,6 +6,7 @@
 #include <Anomaly.h>
 #include <vector>
 #include <PickCamScreen.h>
+#include <QScrollArea>
 #include <qfiledialog.h>
 #include <qmessagebox.h>
 #include <SVMTrainer.h>
@@ -32,6 +33,7 @@ public:
 	QLabel *CamName[10];
 	QLabel *AnomView[10];
 	QLabel *AnomName[10];
+	QScrollArea *scrollArea;
 	QWidgetList *List;
 	int CamCounter;
 	int Rows;
