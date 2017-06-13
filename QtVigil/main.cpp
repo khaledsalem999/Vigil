@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 	QtVigil mainWindow;
 	FeedScreen feedWindow;
-	//mainWindow.show();
+	mainWindow.show();
 	feedWindow.show();
 	feedWindow.raise();
 	

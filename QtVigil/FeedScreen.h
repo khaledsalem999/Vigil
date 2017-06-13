@@ -83,4 +83,5 @@ private:
 	string work_fps="";
 	int64 work_begin;
 	string OldResults = "";
+	int refreshCount = 0;
 };

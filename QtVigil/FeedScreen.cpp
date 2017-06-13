@@ -29,7 +29,7 @@ FeedScreen::FeedScreen(QWidget *parent)
 	}
 
 
-	capture.open("D://vids//vids//firsttrial.MOV");
+	capture.open("D://vids//vids//group2.MOV");
 	capture.set(CV_CAP_PROP_FRAME_WIDTH, 720);
 	capture.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
 	capture.read(frame);
@@ -100,7 +100,8 @@ void FeedScreen::refresh() {
 		string fps;
 		capture.read(frame);
 		frameCount = (frameCount + 1) % 5;
-		cv::resize(frame, frame, Size(720, 480));
+		refreshCount= (refreshCount + 1) % 20;
+		cv::resize(frame, frame, Size(360, 240));
 		cvtColor(frame, frame, CV_BGR2RGB);
 		Rect mr;
 
@@ -117,7 +118,7 @@ void FeedScreen::refresh() {
 			vector< vector< Point> >::iterator itc = contours.begin();
 			while (itc != contours.end()) {
 				mr = boundingRect(Mat(*itc));
-				if (mr.height >= 100)
+				if (mr.height >= 80)
 				{
 					//rectangle(frame, mr, CV_RGB(0, 255, 0),5);
 					cv::Mat subFrame = frameGray(mr).clone();
@@ -156,6 +157,7 @@ void FeedScreen::refresh() {
 				result = "";
 			}//sadasd
 
+			if(refreshCount==0)
 			OldResults = result;
 		}
 		putText(frame, "Result: " + OldResults, Point(5, 65), FONT_HERSHEY_SIMPLEX, 1., Scalar(255, 100, 0), 2);
