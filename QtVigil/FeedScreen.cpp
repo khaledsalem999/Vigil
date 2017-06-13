@@ -29,7 +29,7 @@ FeedScreen::FeedScreen(QWidget *parent)
 	}
 
 
-	capture.open("D://vids//vids//group2.MOV");
+	capture.open("D://vids//vids//firsttrial.MOV");
 	capture.set(CV_CAP_PROP_FRAME_WIDTH, 720);
 	capture.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
 	capture.read(frame);
@@ -85,6 +85,7 @@ void FeedScreen::SetParameters(double, double, int, int)
 {
 
 }
+
 void FeedScreen::resetParameters()
 {
 
@@ -101,6 +102,7 @@ void FeedScreen::refresh() {
 		frameCount = (frameCount + 1) % 5;
 		cv::resize(frame, frame, Size(720, 480));
 		cvtColor(frame, frame, CV_BGR2RGB);
+		Rect mr;
 
 		//every fifth frame
 		if (frameCount == 0) {
@@ -113,18 +115,21 @@ void FeedScreen::refresh() {
 
 			vector < vector< Point>> contours = BackGroundSub();
 			vector< vector< Point> >::iterator itc = contours.begin();
-
 			while (itc != contours.end()) {
-				Rect mr = boundingRect(Mat(*itc));
-				if (mr.height >= 150)
+				mr = boundingRect(Mat(*itc));
+				if (mr.height >= 100)
 				{
-					rectangle(frame, mr, CV_RGB(0, 255, 0));
+					//rectangle(frame, mr, CV_RGB(0, 255, 0),5);
 					cv::Mat subFrame = frameGray(mr).clone();
 
-					if (detector->Detect(subFrame)->GetDescription() == "Jumping into Car.") { arr[0]++; }
-					else if (detector->Detect(subFrame)->GetDescription() == "Object Swinging.") { arr[1]++; }
-					else if (detector->Detect(subFrame)->GetDescription() == "Punching") { arr[2]++; }
-					else if (detector->Detect(subFrame)->GetDescription() == "Pushing against car.") { arr[3]++; }
+					if (detector->Detect(subFrame)->GetDescription() == "Jumping into Car.") { arr[0]++; rectangle(frame, mr, CV_RGB(0, 0, 255), 15);
+					}
+					else if (detector->Detect(subFrame)->GetDescription() == "Object Swinging.") { arr[1]++; rectangle(frame, mr, CV_RGB(0, 0, 255),15);
+					}
+					else if (detector->Detect(subFrame)->GetDescription() == "Punching") { arr[2]++; rectangle(frame, mr, CV_RGB(0, 0, 255),15);
+					}
+					else if (detector->Detect(subFrame)->GetDescription() == "Pushing against car.") { arr[3]++; rectangle(frame, mr, CV_RGB(0, 0, 255),15);
+					}
 					else arr[4]++;
 				}
 				++itc;
@@ -151,12 +156,24 @@ void FeedScreen::refresh() {
 				result = "";
 			}//sadasd
 
-			if (result != "")
-
-			fps = "\nFPS:" + CV_CAP_PROP_FPS;
-			result = result + fps;
-			putText(frame, "Result: " + result, Point(5, 65), FONT_HERSHEY_SIMPLEX, 1., Scalar(255, 100, 0), 2);
-		}   
+			OldResults = result;
+		}
+		putText(frame, "Result: " + OldResults, Point(5, 65), FONT_HERSHEY_SIMPLEX, 1., Scalar(255, 100, 0), 2);
+		//putText(frame, workFps() , Point(5, 65), FONT_HERSHEY_SIMPLEX, 1., Scalar(255, 100, 0), 2);
 		QImage VFrame((uchar*)frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB888);
 		ui.FeedView->setPixmap(QPixmap::fromImage(VFrame));
+}
+
+inline string FeedScreen::workFps() const
+{
+	stringstream ss;
+	ss << work_fps;
+	return ss.str();
+}
+
+inline void FeedScreen::workEnd()
+{
+	int64 delta = getTickCount() - work_begin;
+	double freq = getTickFrequency();
+	work_fps = freq / delta;
 }
