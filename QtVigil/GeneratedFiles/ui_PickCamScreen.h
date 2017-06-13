@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'PickCamScreenmU3736.ui'
+** Form generated from reading UI file 'PickCamScreen.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef PICKCAMSCREENMU3736_H
-#define PICKCAMSCREENMU3736_H
+#ifndef UI_PICKCAMSCREEN_H
+#define UI_PICKCAMSCREEN_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -112,4 +112,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // PICKCAMSCREENMU3736_H
+#endif // UI_PICKCAMSCREEN_H
