@@ -24,13 +24,13 @@ void SVMTrainer::initializeSVM(QString posTemp, QString negTemp) {
 	cout << "Done loading the positive images." << endl;
 	cout << "Labeling images, please wait..." << endl;
 	cout << "labels 1" << endl;
-	labels.insert(labels.end(), 2093, 0);
+	labels.insert(labels.end(), 700, 0);
 	cout << "labels 2" << endl;
-	labels.insert(labels.end(), 1127, 1);
+	labels.insert(labels.end(), 642, 1);
 	cout << "labels 3" << endl;
-	labels.insert(labels.end(), 772, 2);
+	labels.insert(labels.end(), 384, 2);
 	cout << "labels 4" << endl;
-	labels.insert(labels.end(), 1004, 3);
+	labels.insert(labels.end(), 553, 3);
 	//labels.assign(pos_lst.size(), +1);
 
 	const unsigned int old = (unsigned int)labels.size();
@@ -40,7 +40,7 @@ void SVMTrainer::initializeSVM(QString posTemp, QString negTemp) {
 	cout << "Done sampling the negative images." << endl;
 	labels.insert(labels.end(), neg_lst.size(), 4);
 	cout << "Labeling images, please wait..." << endl;
-
+	
 	CV_Assert(old < labels.size());
 
 	cout << "Computing HoG positive features...." << endl;
@@ -188,7 +188,7 @@ void SVMTrainer::train_svm(const vector< Mat > & gradient_lst, const vector< int
 	svm->train(train_data, ROW_SAMPLE, Mat(labels));
 	clog << "...[done]" << endl;
 
-	svm->save("D://Train//doublevid.yml");
+	svm->save("D://Train//backgroundSubTrainer.yml");
 }
 
 void SVMTrainer::draw_locations(Mat & img, const vector< Rect > & locations, const Scalar & color)
