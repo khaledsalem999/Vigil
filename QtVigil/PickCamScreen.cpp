@@ -21,7 +21,7 @@ void PickCamScreen::AddCam()
 
 void PickCamScreen::on_AddFeed_clicked()
 {
-	emit clicked();
+	emit clicked(FilenameVid.toUtf8().constData());
 	this->close();
 }
 

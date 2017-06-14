@@ -8,8 +8,11 @@ QtVigil::QtVigil(QWidget *parent)
 	Rows = 0;
 	Cols = 0;
 
+	Feed = new FeedScreen();
+	timer = new QTimer(this);
 	PickWindow = new PickCamScreen();
-	QObject::connect(PickWindow, SIGNAL(clicked()), this, SLOT(AddCams()));
+	connect(PickWindow, SIGNAL(clicked(string)), this, SLOT(AddCams(string)));
+	connect(PickWindow, SIGNAL(clicked(string)), Feed, SLOT(startFeed(string)));
 
 	for (int i = 0; i < 10; i++) {
 		CamView[i] = new QLabel();
@@ -116,14 +119,20 @@ void QtVigil::on_StartTrain_clicked()
 	TrainingThread();
 }
 
-void QtVigil::AddCams()
+void QtVigil::AddCams(string camname)
 {
+
 	if (CamCounter != 10)
 	{
 		if (Rows != 3)
 		{
+			CamName[CamCounter]->setText(QString::fromStdString(camname));
 			ui.CamViewReg->addWidget(CamView[CamCounter], Cols, Rows);
 			ui.CamViewReg->addWidget(CamName[CamCounter], Cols + 1, Rows);
+
+			connect(timer, SIGNAL(timeout()), this, SLOT(refresh()));
+			timer->start(20);
+
 			CamCounter++;
 			Rows++;
 		}
@@ -159,4 +168,10 @@ void QtVigil::TrainingThread() {
 	trainer.initializeSVM(FilenamePos, FilenameNeg);
 	//done when back in response, till threading.
 	//after threading can show pop up of done
+}
+
+void QtVigil::refresh()
+{
+	QImage VFrame((uchar*)Feed->GetProcessedFrame().data, Feed->GetProcessedFrame().cols, Feed->GetProcessedFrame().rows, Feed->GetProcessedFrame().step, QImage::Format_RGB888);
+	CamView[CamCounter-1]->setPixmap(QPixmap::fromImage(VFrame));
 }

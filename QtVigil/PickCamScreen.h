@@ -3,6 +3,9 @@
 #include <QWidget>
 #include "ui_PickCamScreen.h"
 #include <qfiledialog.h>
+#include <string>
+
+using namespace std;
 
 class PickCamScreen : public QWidget
 {
@@ -16,7 +19,7 @@ public:
 	QString FilenameVid;
 
 signals:
-	void clicked();
+	void clicked(string location);
 
 private slots:
 	void on_AddFeed_clicked();

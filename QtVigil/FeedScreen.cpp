@@ -28,36 +28,40 @@ FeedScreen::FeedScreen(QWidget *parent)
 		//get_svm_detector(svm, hog_detector);
 	}
 
+		
+}
 
-	capture.open("D://vids//vids//group2.MOV");
+FeedScreen::~FeedScreen()
+{
+}
+
+void FeedScreen::startFeed(string location)
+{
+	capture.open(location);
 	capture.set(CV_CAP_PROP_FRAME_WIDTH, 720);
 	capture.set(CV_CAP_PROP_FRAME_HEIGHT, 480);
 	capture.read(frame);
-	detector = new DetectSVM(this, frame, "D://Train//backgroundSubTrainer.yml");
+	detector = new DetectSVM(this, frame, "C://Trainer.yml");
 	refresh();
 
 	//while (capture.read(frame)) {
-		/*BackGroundSub(frame);
-		vector< vector< Point> >::iterator itc = contours.begin();
-		while (itc != contours.end()) {
-			Rect mr = boundingRect(Mat(*itc));
-			if (mr.height >= 200)
-			{
-				rectangle(frame, mr, CV_RGB(0, 255, 0));
-				cv::Mat subFrame = frame(mr).clone();
-				detector->Detect(subFrame);
-			}
-			itc++;
-		}
+	/*BackGroundSub(frame);
+	vector< vector< Point> >::iterator itc = contours.begin();
+	while (itc != contours.end()) {
+	Rect mr = boundingRect(Mat(*itc));
+	if (mr.height >= 200)
+	{
+	rectangle(frame, mr, CV_RGB(0, 255, 0));
+	cv::Mat subFrame = frame(mr).clone();
+	detector->Detect(subFrame);
+	}
+	itc++;
+	}
 	}*/
 
 	tmrTimer = new QTimer(this);
 	connect(tmrTimer, SIGNAL(timeout()), this, SLOT(refresh()));
 	tmrTimer->start(10);
-}
-
-FeedScreen::~FeedScreen()
-{
 }
 
 vector<vector<Point>> FeedScreen::BackGroundSub()
@@ -164,6 +168,12 @@ void FeedScreen::refresh() {
 		//putText(frame, workFps() , Point(5, 65), FONT_HERSHEY_SIMPLEX, 1., Scalar(255, 100, 0), 2);
 		QImage VFrame((uchar*)frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB888);
 		ui.FeedView->setPixmap(QPixmap::fromImage(VFrame));
+		waitKey(60);
+}
+
+Mat FeedScreen::GetProcessedFrame()
+{
+	return frame;
 }
 
 inline string FeedScreen::workFps() const

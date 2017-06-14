@@ -11,6 +11,8 @@
 #include <qmessagebox.h>
 #include <SVMTrainer.h>
 #include <thread>
+#include <qtimer.h>
+#include <FeedScreen.h>
 
 
 class QtVigil : public QMainWindow
@@ -33,15 +35,18 @@ public:
 	QLabel *CamName[10];
 	QLabel *AnomView[10];
 	QLabel *AnomName[10];
+	FeedScreen *Feed;
 	QScrollArea *scrollArea;
 	QWidgetList *List;
+	QTimer *timer;
 	int CamCounter;
 	int Rows;
 	int Cols;
 
 public slots:
-	void AddCams();
+	void AddCams(string);
 	void AddAnoms();
+	void refresh();
 
 private slots:
     void on_AddCam_clicked();
